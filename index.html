@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pio Francois ACAKPOVI | Développeur Full Stack | DevSecOps | Architecte SOAR & IA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">PIO.SEC</a>
+
+            <nav id="nav-menu" class="nav-menu">
+                <a href="#accueil" class="nav-link active" data-i18n="nav.home">Accueil</a>
+                <a href="#profil" class="nav-link" data-i18n="nav.profile">Profil</a>
+                <a href="#experiences" class="nav-link" data-i18n="nav.experience">Parcours</a>
+                <a href="#projets" class="nav-link" data-i18n="nav.projects">Projets</a>
+                <a href="#veille" class="nav-link" data-i18n="nav.blog">Veille</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <div class="header-right">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Bascule thème" title="Changer de thème">
+                    <span class="material-symbols-outlined">light_mode</span>
+                </button>
+
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <span class="lang-separator">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section id="accueil" class="section hero-content">
+            <div class="hero-left">
+                <!-- Status Badge -->
+                <div class="status-badge hero-status" title="Disponibilité opérationnelle active">
+                    <span class="status-dot"></span>
+                    <span class="status-text" data-i18n="status.available">Disponible</span>
+                </div>
+                <div class="hero-tagline" data-i18n="hero.tagline">Full Stack | DevSecOps | SOAR & IA</div>
+                <h1 class="hero-title" data-i18n="hero.title">PIO FRANCOIS<br><span>ACAKPOVI</span></h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Architecte SecOps & Développeur Django</p>
+                <p class="hero-desc" data-i18n="hero.desc">
+                    Expertise dans la conception d'architectures backend Django sécurisées, l'automatisation SOAR et l'intégration d'IA générative (RAG) avec une philosophie Security by Design.
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <span class="material-symbols-outlined">vpn_key</span>
+                        <span data-i18n="hero.btn_contact">Initialiser la Connexion</span>
+                    </a>
+                    <a href="#projets" class="btn btn-secondary">
+                        <span class="material-symbols-outlined">terminal</span>
+                        <span data-i18n="hero.btn_projects">Explorer les Projets</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <!-- Interactive Terminal Simulator -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <div class="terminal-title">pio@sec-arch: ~</div>
+                        <div class="terminal-spacer"></div>
+                    </div>
+                    <div id="terminal-output" class="terminal-content">
+                        <!-- Output generated via script.js -->
+                    </div>
+                    <div class="terminal-input-row">
+                        <span class="prompt">pio@sec-arch:~$</span>
+                        <input id="terminal-input" class="terminal-input" type="text" placeholder="Entrez une commande (ex: help)..." disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Section (Bento Grid & Stats) -->
+        <section id="profil" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="profile.title">Profil <span>Professionnel</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="stats-grid reveal">
+                <div class="glass-panel stat-card">
+                    <div class="stat-num-container">
+                        <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-label" data-i18n="stat.years">Années d'Expérience</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="stat-num-container">
+                        <span class="stat-num" data-target="8">0</span>
+                    </div>
+                    <div class="stat-label" data-i18n="stat.projects">Projets Réalisés</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="stat-num-container">
+                        <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-label" data-i18n="stat.vulns">Audits SecOps</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="stat-num-container">
+                        <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+                    </div>
+                    <div class="stat-label" data-i18n="stat.passion">Passion Cyber & Dev</div>
+                </div>
+            </div>
+
+            <div class="profile-bento-grid">
+                <!-- Card 1: Identity & Bio -->
+                <div class="glass-panel profile-bento-card bento-span-2 reveal">
+                    <div class="profile-header-card">
+                        <div class="profile-avatar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="profile-card-name">Pio Francois ACAKPOVI</h3>
+                            <p class="profile-card-role" data-i18n="profile.subtitle">Développeur Full Stack | DevSecOps | Architecte SOAR & IA (RAG)</p>
+                        </div>
+                    </div>
+                    <p class="about-text" data-i18n="profile.bio">
+                        Développeur passionné et spécialisé dans la cybersécurité et le développement sécurisé. Doté d'une expertise reconnue sur l'écosystème Django, j'intègre les pipelines DevSecOps, l'orchestration SOAR (Wazuh, TheHive, OpenVAS) et les architectures d'IA générative (RAG via Ollama, LLMs locaux) au cœur de solutions backend hautement sécurisées.
+                    </p>
+                    <div class="profile-actions">
+                        <a href="cv.pdf" download="CV_Pio_Acakpovi.pdf" class="btn btn-secondary btn-cv-profile" title="Télécharger le CV PDF">
+                            <span class="material-symbols-outlined">download</span>
+                            <span data-i18n="profile.download_cv">Télécharger le CV (PDF)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Contact Info -->
+                <div class="glass-panel profile-bento-card bento-span-1 reveal">
+                    <h3 class="bento-card-title">
+                        <span class="material-symbols-outlined icon-teal">contact_page</span>
+                        <span data-i18n="profile.coordonnees">Coordonnées</span>
+                    </h3>
+                    <div class="profile-info-list">
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value"><a href="mailto:pioacakpovi@gmail.com">pioacakpovi@gmail.com</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="profile.phone">Téléphone:</span>
+                            <span class="info-value"><a href="tel:+2290197575034">+229 0197575034</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="profile.location">Localisation:</span>
+                            <span class="info-value">Abomey-Calavi Cotonou, Bénin</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">LinkedIn:</span>
+                            <span class="info-value"><a href="https://www.linkedin.com/in/pio-acakpovi/" target="_blank" rel="noopener noreferrer" class="link-teal">pio-acakpovi</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Career Objective -->
+                <div class="glass-panel profile-bento-card bento-span-1 border-left-teal reveal">
+                    <h3 class="bento-card-title">
+                        <span class="material-symbols-outlined icon-teal">military_tech</span>
+                        <span data-i18n="profile.goal_title">Objectif Professionnel</span>
+                    </h3>
+                    <p class="bento-card-desc" data-i18n="profile.goal_desc">
+                        Tech Lead spécialisé en cybersécurité et développement sécurisé. Objectif : piloter des équipes techniques dans la conception d'architectures backend Django résilientes, intégrant SecOps, automatisation SOAR et IA générative (RAG) avec une approche Security by Design systématique.
+                    </p>
+                </div>
+
+                <!-- Card 4: Languages (Progress bars) -->
+                <div class="glass-panel profile-bento-card bento-span-1 reveal">
+                    <h3 class="bento-card-title">
+                        <span class="material-symbols-outlined icon-teal">translate</span>
+                        <span data-i18n="profile.lang_title">Langues</span>
+                    </h3>
+                    <div class="languages-list">
+                        <div class="lang-progress-item">
+                            <div class="lang-meta">
+                                <span data-i18n="profile.lang_fr">Français</span>
+                                <span class="lang-level" data-i18n="profile.lang_fr_level">Maternelle (100%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-progress-item">
+                            <div class="lang-meta">
+                                <span data-i18n="profile.lang_fon">Fon</span>
+                                <span class="lang-level" data-i18n="profile.lang_fon_level">Courant (90%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-progress-item">
+                            <div class="lang-meta">
+                                <span data-i18n="profile.lang_en">Anglais</span>
+                                <span class="lang-level" data-i18n="profile.lang_en_level">Intermédiaire (60%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Interests -->
+                <div class="glass-panel profile-bento-card bento-span-1 reveal">
+                    <h3 class="bento-card-title">
+                        <span class="material-symbols-outlined icon-teal">interests</span>
+                        <span data-i18n="profile.interests_title">Intérêts</span>
+                    </h3>
+                    <ul class="interests-tags">
+                        <li>
+                            <span class="material-symbols-outlined tag-icon">code</span>
+                            <span data-i18n="profile.interest_os">Open Source</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined tag-icon">school</span>
+                            <span data-i18n="profile.interest_ment">Mentorat tech</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined tag-icon">security</span>
+                            <span data-i18n="profile.interest_watch">Veille CVE / CERT</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: GitHub API Stats (Span-1) -->
+                <div class="glass-panel profile-bento-card bento-span-1 reveal" id="github-stats-card">
+                    <h3 class="bento-card-title">
+                        <svg class="icon-teal" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle;">
+                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                        </svg>
+                        <span data-i18n="profile.github_title">GitHub Dynamique</span>
+                    </h3>
+                    <div id="github-api-content" class="github-api-loading">
+                        <div class="spinner"></div>
+                        <p data-i18n="profile.github_loading" style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">Synchronisation avec api.github.com...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expériences Section (Timeline Expandable) -->
+        <section id="experiences" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="exp.title">Parcours <span>Professionnel</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Exp 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-panel timeline-panel">
+                        <div class="timeline-meta">
+                            <span class="timeline-company">MEWAN LOGIA — Cotonou, Bénin</span>
+                            <span class="timeline-date" data-i18n="exp.mewan_date">Avril 2024 – Présent</span>
+                        </div>
+                        <h3 class="timeline-role" data-i18n="exp.mewan_role">Développeur & Analyste Sécurité Junior</h3>
+                        
+                        <button class="timeline-toggle-btn">
+                            <span class="btn-text" data-i18n="exp.toggle_details">Missions & Tâches</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="timeline-details">
+                            <ul class="timeline-bullets">
+                                <li data-i18n="exp.mewan_b1">Supervision et coordination des développements d'applications web et mobiles de la conception au déploiement.</li>
+                                <li data-i18n="exp.mewan_b2">Management d'une équipe de développeurs, allocation des ressources et priorisation.</li>
+                                <li data-i18n="exp.mewan_b3">Développement d'applications web sécurisées (React, Django, PostgreSQL) avec contrôles OWASP intégrés.</li>
+                                <li data-i18n="exp.mewan_b4">Conduite de tests d'intrusion (boîte noire, grise et blanche) sur applications web et infrastructures réseau.</li>
+                                <li data-i18n="exp.mewan_b5">Mise en place de pipelines DevSecOps (analyse SAST SonarQube, DAST OWASP ZAP, gestion des secrets).</li>
+                                <li data-i18n="exp.mewan_b6">Surveillance SOC : analyse d'alertes SIEM, investigation, réponse et remédiation (Wazuh, OpenVAS, TheHive).</li>
+                                <li data-i18n="exp.mewan_b7">Formation des équipes au codage sécurisé et rédaction de rapports de vulnérabilités (scores CVSS).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-panel timeline-panel">
+                        <div class="timeline-meta">
+                            <span class="timeline-company">PADME — Cotonou, Bénin</span>
+                            <span class="timeline-date" data-i18n="exp.padme_date">Juin 2023 - Septembre 2023</span>
+                        </div>
+                        <h3 class="timeline-role" data-i18n="exp.padme_role">Stagiaire professionnel en sécurité informatique</h3>
+                        
+                        <button class="timeline-toggle-btn">
+                            <span class="btn-text" data-i18n="exp.toggle_details">Missions & Tâches</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="timeline-details">
+                            <ul class="timeline-bullets">
+                                <li data-i18n="exp.padme_b1">Participation proactive à la révision et à l'amélioration de la Politique de Sécurité des Systèmes d'Information (PSSI).</li>
+                                <li data-i18n="exp.padme_b2">Contribution à l'élaboration de plans de contrôle et de plan de continuité informatique (PCA/PRA).</li>
+                                <li data-i18n="exp.padme_b3">Déploiement et intégration de solutions de gestion libre de parc informatique et d'assistance technique.</li>
+                                <li data-i18n="exp.padme_b4">Collaboration à la mise en place d'une plateforme d'apprentissage numérique pour renforcer les compétences cyber internes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-panel timeline-panel">
+                        <div class="timeline-meta">
+                            <span class="timeline-company">JCIT — Cotonou, Bénin</span>
+                            <span class="timeline-date" data-i18n="exp.jcit_date">Août 2021 - Mai 2023</span>
+                        </div>
+                        <h3 class="timeline-role" data-i18n="exp.jcit_role">Développeur Full Stack</h3>
+                        
+                        <button class="timeline-toggle-btn">
+                            <span class="btn-text" data-i18n="exp.toggle_details">Missions & Tâches</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="timeline-details">
+                            <ul class="timeline-bullets">
+                                <li data-i18n="exp.jcit_b1">Développement d'une plateforme SaaS de gestion des ressources humaines (React, Django REST, PostgreSQL, Redis).</li>
+                                <li data-i18n="exp.jcit_b2">Implémentation de protocoles d'authentification robuste (OAuth2, JWT, 2FA).</li>
+                                <li data-i18n="exp.jcit_b3">Chiffrement AES-256 des données sensibles et sécurisation des API (TLS, CORS, rate limiting).</li>
+                                <li data-i18n="exp.jcit_b4">Intégration de passerelles de paiement conformes aux standards PCI-DSS (Stripe, CinetPay, MTN MoMo).</li>
+                                <li data-i18n="exp.jcit_b5">Déploiement et monitoring d'applications sur serveurs AWS EC2 via pipelines CI/CD (GitHub Actions).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 4 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-panel timeline-panel">
+                        <div class="timeline-meta">
+                            <span class="timeline-company">MAOUCO GROUP — Cotonou, Bénin</span>
+                            <span class="timeline-date" data-i18n="exp.jcit_stage_date">Juin 2020 - Mai 2021</span>
+                        </div>
+                        <h3 class="timeline-role" data-i18n="exp.jcit_stage_role">Stagiaire en développement d'applications</h3>
+                        
+                        <button class="timeline-toggle-btn">
+                            <span class="btn-text" data-i18n="exp.toggle_details">Missions & Tâches</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="timeline-details">
+                            <ul class="timeline-bullets">
+                                <li data-i18n="exp.jcit_stage_b1">Analyse des processus métiers et intégration d'optimisations logicielles pour améliorer la performance système.</li>
+                                <li data-i18n="exp.jcit_stage_b2">Conception et implémentation de modules complexes répondant aux besoins fonctionnels.</li>
+                                <li data-i18n="exp.jcit_stage_b3">Conception d'interfaces utilisateurs responsives et ergonomiques (centrées UX).</li>
+                                <li data-i18n="exp.jcit_stage_b4">Participation active aux phases d'ingénierie logicielle selon le cycle en V (spécifications, tests unitaires et d'intégration).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets Section -->
+        <section id="projets" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="proj.title">Réalisations <span>SecOps & IA</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="projects-filter-container reveal">
+                <button class="filter-btn active" data-filter="all" data-i18n="proj.filter_all">Tout</button>
+                <button class="filter-btn" data-filter="secops" data-i18n="proj.filter_secops">Cyber & SecOps</button>
+                <button class="filter-btn" data-filter="ai" data-i18n="proj.filter_ai">IA & NLP</button>
+                <button class="filter-btn" data-filter="web" data-i18n="proj.filter_web">Full-Stack & Web</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="glass-panel project-card reveal" data-project-id="grc" data-category="secops web">
+                    <div class="project-code-bg">
+                        <pre><code>import wazuh
+from celery import shared_task
+
+@shared_task
+def scan_vulnerabilities(host):
+    # SOAR Incident Response Orchestration
+    alert = wazuh.trigger_alert(host)
+    if alert.severity > 7:
+        thehive.create_case(alert)</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2023</div>
+                        <h3 class="project-card-title" data-i18n="proj.p1_title">Solution Globale de Cybersécurité, GRC & ITAM</h3>
+                        <p class="project-card-desc" data-i18n="proj.p1_desc">Plateforme intégrée de gestion des incidents et des actifs (CMDB) orchestrant des solutions clés et un assistant IA souverain.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p1_b1"><strong>Rôle Tech Lead & Full-Stack :</strong> Cadrage, management technique de 2 développeurs et architecture de la plateforme.</li>
+                                <li data-i18n="proj.p1_b2"><strong>Backend & SOAR :</strong> Interconnexion de Wazuh, TheHive, OpenVAS, et automatisation asynchrone Celery/Redis.</li>
+                                <li data-i18n="proj.p1_b3"><strong>IA Souveraine :</strong> Intégration d'un assistant RAG avec modèle LLM local via Ollama pour la recommandation de remédiations.</li>
+                                <li data-i18n="proj.p1_b4"><strong>Stack :</strong> Python, Django, PostgreSQL, Celery, Redis, Linux Debian.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="glass-panel project-card reveal" data-project-id="rbac" data-category="secops">
+                    <div class="project-code-bg">
+                        <pre><code>class RBACEngine:
+    def check_permission(self, user, resource, action):
+        roles = user.get_active_roles()
+        for role in roles:
+            if role.has_privilege(resource, action):
+                return True
+        raise PermissionDenied("Access Revoked")</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2025</div>
+                        <h3 class="project-card-title" data-i18n="proj.p2_title">Contrôle des Habilitations (Sous NDA)</h3>
+                        <p class="project-card-desc" data-i18n="proj.p2_desc">Solution de gestion centralisée, d'attribution et de révocation des droits d'accès aux applications d'entreprise.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p2_b1"><strong>Supervision & Développement :</strong> Direction technique sur la modélisation et l'application stricte des règles de sécurité.</li>
+                                <li data-i18n="proj.p2_b2"><strong>Moteur RBAC :</strong> Développement d'un algorithme d'audit automatisé comparant les habilitations actives avec les règles de conformité.</li>
+                                <li data-i18n="proj.p2_b3"><strong>Dashboarding :</strong> Console d'administration centralisée épurée de suivi des niveaux de criticité et d'anomalies de droits.</li>
+                                <li data-i18n="proj.p2_b4"><strong>Stack :</strong> Python, Django, RBAC Engine, Dashboarding.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="glass-panel project-card reveal" data-project-id="rag" data-category="ai web">
+                    <div class="project-code-bg">
+                        <pre><code>from langchain_openai import ChatOpenAI
+from langchain.vectorstores import PGVector
+
+def generate_interview_question(cv_embeddings, job_description):
+    vector_db = PGVector.from_existing_index(cv_embeddings)
+    relevant_context = vector_db.similarity_search(job_description)
+    llm = ChatOpenAI(model="gpt-4o")
+    return llm.predict(relevant_context, job_description)</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2025</div>
+                        <h3 class="project-card-title" data-i18n="proj.p3_title">Plateforme SaaS de Simulation d'Entretiens IA</h3>
+                        <p class="project-card-desc" data-i18n="proj.p3_desc">Application de simulation d'entretiens personnalisés avec système de matching CV-offre et génération de rapports.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p3_b1"><strong>Conception & Architecture :</strong> Rédaction des spécifications et implémentation complète en tant que projet personnel.</li>
+                                <li data-i18n="proj.p3_b2"><strong>Moteur d'IA :</strong> API REST sous Django, matching automatique (CV ↔ Offre) et mode de simulation interactive via OpenAI et Llama 3.3 (Groq API).</li>
+                                <li data-i18n="proj.p3_b3"><strong>NLP & Traitement Async :</strong> Module d'extraction NLP des documents (PDF/DOCX), files de tâches Celery/Redis pour la notation et génération de comptes-rendus.</li>
+                                <li data-i18n="proj.p3_b4"><strong>Stack :</strong> Next.js, Django, PostgreSQL, Celery, Redis, OpenAI/Groq APIs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="glass-panel project-card reveal" data-project-id="coverse" data-category="ai">
+                    <div class="project-code-bg">
+                        <pre><code>import ollama
+
+def handle_customer_interaction(query, business_context):
+    response = ollama.generate(
+        model='llama3',
+        prompt=f"Context: {business_context}\nQuery: {query}"
+    )
+    return response['response']</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2024</div>
+                        <h3 class="project-card-title" data-i18n="proj.p4_title">COVERSE IA</h3>
+                        <p class="project-card-desc" data-i18n="proj.p4_desc">Conception et développement d'un agent intelligent capable de gérer automatiquement les interactions clients pour tout type d'entreprise.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p4_b1"><strong>Objectif :</strong> Automatiser les réponses aux messages (support client, FAQ, assistance) de manière fluide et contextualisée.</li>
+                                <li data-i18n="proj.p4_b2"><strong>IA Locale :</strong> Génération de réponses intelligentes basées sur des modèles LLM en local via Ollama.</li>
+                                <li data-i18n="proj.p4_b3"><strong>Architecture :</strong> Backend Python pour l'orchestration, API REST et intégrations externes, indépendance vis-à-vis des services cloud.</li>
+                                <li data-i18n="proj.p4_b4"><strong>Stack :</strong> Python, Ollama, API integration, LLM local.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="glass-panel project-card reveal" data-project-id="paidsbet" data-category="web">
+                    <div class="project-code-bg">
+                        <pre><code>async function rechargeAccount(accountId, amount) {
+    const payload = { accountId, amount, currency: 'XOF' };
+    const signature = encryptPayload(payload, privateKey);
+    return await gateway.post('/recharge', { payload, signature });
+}</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2024</div>
+                        <h3 class="project-card-title" data-i18n="proj.p5_title">Paidsbet</h3>
+                        <p class="project-card-desc" data-i18n="proj.p5_desc">Application facilitant les recharges automatisées des comptes clients 1XBET pour agents multicaissiers au Bénin.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p5_b1"><strong>Fonctionnalité :</strong> Automatisation des recharges d'argent sur la plateforme 1XBET pour les réseaux multicaissiers locaux.</li>
+                                <li data-i18n="proj.p5_b2"><strong>Sécurité :</strong> Chiffrement des payloads de paiement, gestion robuste des signatures cryptographiques et double authentification.</li>
+                                <li data-i18n="proj.p5_b3"><strong>Transactions :</strong> File d'attente asynchrone pour traiter des centaines de requêtes financières sans perte ni double-crédit.</li>
+                                <li data-i18n="proj.p5_b4"><strong>Stack :</strong> JavaScript, Node.js, Passerelles de paiement béninoises, Cryptographie RSA.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="glass-panel project-card reveal" data-project-id="translator" data-category="ai">
+                    <div class="project-code-bg">
+                        <pre><code>import polib
+from google.cloud import translate_v2 as translate
+
+def translate_po_file(filepath, target_language):
+    po = polib.pofile(filepath)
+    for entry in po.untranslated_entries():
+        entry.msgstr = translate_text(entry.msgid, target_language)
+    po.save()</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2025</div>
+                        <h3 class="project-card-title" data-i18n="proj.p6_title">Traducteur PO IA</h3>
+                        <p class="project-card-desc" data-i18n="proj.p6_desc">Application intelligente permettant de traduire automatiquement les fichiers de localisation gettext (.po).</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p6_b1"><strong>Multi-Moteurs :</strong> Traduction via des modèles IA s'exécutant sur CPU ou GPU locaux selon la configuration de la machine, ou par l'API Google Translate.</li>
+                                <li data-i18n="proj.p6_b2"><strong>Localisation :</strong> Traitement et parsing de fichiers gettext volumineux tout en conservant le formatage initial et les placeholders originaux.</li>
+                                <li data-i18n="proj.p6_b3"><strong>Interface :</strong> Outil CLI et API pour automatiser la localisation dans les pipelines CI/CD.</li>
+                                <li data-i18n="proj.p6_b4"><strong>Stack :</strong> Python, Polib, PyTorch (CPU/GPU acceleration), Google Cloud Translation API.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 7 -->
+                <div class="glass-panel project-card reveal" data-project-id="naxo" data-category="ai web">
+                    <div class="project-code-bg">
+                        <pre><code>// NAXO IA Restaurant Agent
+async function processOrder(chatInput) {
+    const intent = await classifyIntent(chatInput);
+    if (intent.type === 'order_food') {
+        return await createOrder(intent.details);
+    }
+    return await getFAQResponse(chatInput);
+}</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2024</div>
+                        <h3 class="project-card-title" data-i18n="proj.p7_title">Naxo IA</h3>
+                        <p class="project-card-desc" data-i18n="proj.p7_desc">Solution de chat intelligente et prise de commande automatique dédiée aux restaurants.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p7_b1"><strong>Commandes IA :</strong> Classification des intentions de l'utilisateur pour extraire les plats commandés et les quantités.</li>
+                                <li data-i18n="proj.p7_b2"><strong>FAQ Conversationnelle :</strong> Réponses automatiques instantanées aux questions des clients sur le menu, les horaires, les réservations et les allergènes.</li>
+                                <li data-i18n="proj.p7_b3"><strong>Intégration POS :</strong> Envoi des commandes validées directement au système de cuisine du restaurant.</li>
+                                <li data-i18n="proj.p7_b4"><strong>Stack :</strong> Node.js, NLP Classification, WebSocket, Django API.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 8 -->
+                <div class="glass-panel project-card reveal" data-project-id="optimus" data-category="web ai">
+                    <div class="project-code-bg">
+                        <pre><code>class OptimusTrader:
+    def backtest_strategy(self, strategy, historical_data):
+        positions = strategy.run(historical_data)
+        metrics = calculate_performance(positions)
+        return metrics</code></pre>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-year">2025</div>
+                        <h3 class="project-card-title" data-i18n="proj.p8_title">Optimus</h3>
+                        <p class="project-card-desc" data-i18n="proj.p8_desc">Solution multi-utilisateur de trading algorithmique, de backtesting et d'exécution d'ordres en temps réel.</p>
+                        
+                        <button class="project-btn-details">
+                            <span class="btn-text" data-i18n="proj.details">Détails</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+
+                        <div class="project-accordion-content">
+                            <ul class="project-bullets">
+                                <li data-i18n="proj.p8_b1"><strong>Trading Automatisé :</strong> Exécution de positions financières selon des signaux algorithmiques prédéfinis.</li>
+                                <li data-i18n="proj.p8_b2"><strong>Backtesting :</strong> Simulation historique de stratégies de trading avec calcul des KPIs clés (Sharpe Ratio, Drawdown, Profit Factor).</li>
+                                <li data-i18n="proj.p8_b3"><strong>Multi-Utilisateurs :</strong> Isolation complète des portefeuilles clients, gestion sécurisée des clés API des brokers de trading.</li>
+                                <li data-i18n="proj.p8_b4"><strong>Stack :</strong> Python, Django, Celery/Redis, Pandas, MetaTrader API, Redis WebSockets.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Veille & Blog Section (Bento Grid) -->
+        <section id="veille" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="blog.title">Veille <span>Cyber & IA</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <div class="glass-panel blog-card reveal">
+                    <div class="blog-meta">
+                        <span class="blog-date">05 Juin 2026</span>
+                        <span class="blog-tag">DevSecOps</span>
+                    </div>
+                    <h3 class="blog-card-title" data-i18n="blog.a1_title">Sécuriser Django face au OWASP Top 10</h3>
+                    <p class="blog-card-desc" data-i18n="blog.a1_desc">Guide pratique sur la configuration du middleware Django, la protection contre le Clickjacking, XSS et l'injection de requêtes SQL.</p>
+                    <a href="#veille" class="blog-btn-read" data-article="django-sec">
+                        <span data-i18n="blog.read_more">Lire l'article</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="glass-panel blog-card reveal">
+                    <div class="blog-meta">
+                        <span class="blog-date">28 Mai 2026</span>
+                        <span class="blog-tag">SecOps</span>
+                    </div>
+                    <h3 class="blog-card-title" data-i18n="blog.a2_title">Orchestration SOAR : Connecter Wazuh et TheHive</h3>
+                    <p class="blog-card-desc" data-i18n="blog.a2_desc">Comment automatiser la réponse sur incident en transmettant des alertes de sécurité système en temps réel à un gestionnaire de cas.</p>
+                    <a href="#veille" class="blog-btn-read" data-article="soar-wazuh">
+                        <span data-i18n="blog.read_more">Lire l'article</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="glass-panel blog-card reveal">
+                    <div class="blog-meta">
+                        <span class="blog-date">15 Mai 2026</span>
+                        <span class="blog-tag">IA / RAG</span>
+                    </div>
+                    <h3 class="blog-card-title" data-i18n="blog.a3_title">RAG Local : L'IA Souveraine en Entreprise</h3>
+                    <p class="blog-card-desc" data-i18n="blog.a3_desc">Exploration technique de l'hébergement de LLMs locaux via Ollama et pgvector pour sécuriser les données internes de l'entreprise.</p>
+                    <a href="#veille" class="blog-btn-read" data-article="rag-local">
+                        <span data-i18n="blog.read_more">Lire l'article</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Full article viewer modal -->
+            <div id="article-modal" class="modal hidden">
+                <div class="modal-overlay"></div>
+                <div class="glass-panel modal-container">
+                    <button class="modal-close-btn" aria-label="Fermer">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                    <div id="modal-article-content" class="modal-body">
+                        <!-- Dynamic article text goes here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section id="competences" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="skills.title">Matrice de <span>Compétences</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="skills-bento-grid">
+                <!-- Card 1: Cybersecurity & SecOps -->
+                <div class="glass-panel skill-card">
+                    <h3 class="skill-card-title" data-i18n="skills.sec_title">Sécurité & SecOps</h3>
+                    <div class="skill-tags">
+                        <span>OWASP</span>
+                        <span>SIEM / SOC</span>
+                        <span>Wazuh</span>
+                        <span>TheHive</span>
+                        <span>OpenVAS</span>
+                        <span>Active Directory</span>
+                        <span>Kali Linux</span>
+                        <span>Audits de code</span>
+                        <span>Moteur RBAC</span>
+                        <span>Journalisation (Logging)</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Development & Cloud -->
+                <div class="glass-panel skill-card">
+                    <h3 class="skill-card-title" data-i18n="skills.dev_title">Développement & Cloud</h3>
+                    <div class="skill-tags">
+                        <span>Python (Django & DRF)</span>
+                        <span>JavaScript / TypeScript</span>
+                        <span>React.js / Vue.js</span>
+                        <span>Next.js</span>
+                        <span>SQL / PostgreSQL</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>AWS / Cloud</span>
+                        <span>CI/CD (GitHub Actions)</span>
+                        <span>Celery / Redis</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: IA & Outils -->
+                <div class="glass-panel skill-card">
+                    <h3 class="skill-card-title" data-i18n="skills.tools_title">Ingénierie IA & Outils</h3>
+                    <div class="skill-tags">
+                        <span>Intégration LLM (OpenAI, Groq)</span>
+                        <span>Architectures RAG</span>
+                        <span>Ollama / HuggingFace</span>
+                        <span>NLP extraction</span>
+                        <span>Git / GitHub</span>
+                        <span>Wireshark & Nmap</span>
+                        <span>Metasploit</span>
+                        <span>Agile / Scrum</span>
+                        <span>Jira / Trello / Redmine</span>
+                        <span>TDD (Test-Driven Dev)</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Security compliance log console -->
+                <div class="glass-panel skill-card bento-console-card">
+                    <div class="console-controls">
+                        <span class="control-dot red"></span>
+                        <span class="control-dot yellow"></span>
+                        <span class="control-dot green"></span>
+                        <span class="console-title">audit_compliance.log</span>
+                    </div>
+                    <div id="bento-console" class="bento-console-content">
+                        <!-- Auto-updating logs generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formations Section -->
+        <section id="formations" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="edu.title">Formations & <span>Parcours</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="education-grid">
+                <div class="glass-panel education-card">
+                    <div class="education-icon">
+                        <span class="material-symbols-outlined">school</span>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-year">2017 – 2020</div>
+                        <h3 class="education-degree" data-i18n="edu.degree">Licence en Informatique — Réseaux Informatique et Télécoms</h3>
+                        <p class="education-school">Université Polytechnique Internationale du Bénin (UPIB)</p>
+                        <p class="education-notes" data-i18n="edu.notes">Mention Très bien — Spécialisation Systèmes, Réseaux et Sécurité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommandations Section -->
+        <section id="recommandations" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="rec.title">Recommandations & <span>Témoignages</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="recommandations-carousel reveal">
+                <div class="recommandations-track">
+                    <!-- Slide 1 -->
+                    <div class="glass-panel recommendation-card active">
+                        <div class="rec-quote">"Pio a démontré une expertise remarquable lors du déploiement de notre plateforme de sécurité. Son management technique et sa réactivité ont été précieux pour le succès du projet SOAR."</div>
+                        <div class="rec-author">
+                            <div class="rec-avatar">ML</div>
+                            <div>
+                                <h4 class="rec-name">Directeur de projet</h4>
+                                <p class="rec-company">MEWAN LOGIA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="glass-panel recommendation-card">
+                        <div class="rec-quote">"Un développeur rigoureux qui intègre la sécurité à chaque étape du cycle de développement. Ses compétences sur Django et l'intégration d'API financières sont excellentes."</div>
+                        <div class="rec-author">
+                            <div class="rec-avatar">JC</div>
+                            <div>
+                                <h4 class="rec-name">Lead Developer</h4>
+                                <p class="rec-company">JCIT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel controls -->
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-index="0"></span>
+                    <span class="carousel-dot" data-index="1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Initialiser la <span>Connexion</span></h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <p class="contact-subtitle" data-i18n="contact.subtitle">Établir un tunnel de communication</p>
+                    <p class="contact-description" data-i18n="contact.desc">N'hésitez pas à me contacter pour toute opportunité de collaboration ou échange technique sécurisé.</p>
+                    
+                    <div class="contact-links">
+                        <div class="contact-link-item">
+                            <span class="material-symbols-outlined icon-teal">mail</span>
+                            <div>
+                                <h4 class="contact-link-label">Secure Mail</h4>
+                                <p class="contact-link-val"><a href="mailto:pioacakpovi@gmail.com">pioacakpovi@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-link-item">
+                            <span class="material-symbols-outlined icon-teal">phone_iphone</span>
+                            <div>
+                                <h4 class="contact-link-label">Signal / Call</h4>
+                                <p class="contact-link-val"><a href="tel:+2290197575034">+229 0197575034</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel contact-form-panel">
+                    <form id="secure-contact-form" autocomplete="off">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                        
+                        <!-- Honeypot anti-spam -->
+                        <div class="honeypot-field" style="display:none;">
+                            <label for="security_token">Token</label>
+                            <input type="text" id="security_token" name="security_token">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-name" data-i18n="contact.name_label">Nom / Organisation *</label>
+                            <input type="text" id="form-name" name="name" required placeholder="Entrez votre nom" data-i18n-placeholder="contact.name_placeholder">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-email" data-i18n="contact.email_label">Adresse de messagerie *</label>
+                            <input type="email" id="form-email" name="email" required placeholder="nom@exemple.com" data-i18n-placeholder="contact.email_placeholder">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-subject" data-i18n="contact.subject_label">Sujet *</label>
+                            <input type="text" id="form-subject" name="subject" required placeholder="Sujet de votre message" data-i18n-placeholder="contact.subject_placeholder">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message" data-i18n="contact.message_label">Message *</label>
+                            <textarea id="form-message" name="message" rows="5" required placeholder="Votre message..." data-i18n-placeholder="contact.message_placeholder"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="material-symbols-outlined">send</span>
+                            <span data-i18n="contact.send_btn">Envoyer le paquet</span>
+                        </button>
+                    </form>
+
+                    <!-- Transmission logs console -->
+                    <div id="contact-console-container" class="contact-console-container hidden">
+                        <div class="console-controls">
+                            <span class="control-dot red"></span>
+                            <span class="control-dot yellow"></span>
+                            <span class="control-dot green"></span>
+                            <span class="console-title">secure_transmission.log</span>
+                        </div>
+                        <div id="contact-console-logs" class="contact-console-logs"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 Pio Francois ACAKPOVI. All rights reserved.</p>
+            <p class="footer-sec" data-i18n="footer.compliance">Conformité RGPD & Chiffrement de bout en bout actif.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
