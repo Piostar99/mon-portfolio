@@ -1332,7 +1332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================================================
     const githubContent = document.getElementById("github-api-content");
     if (githubContent) {
-        const username = "pioacakpovi"; // target profile
+        const username = "piostar99"; // target profile
         
         fetch(`https://api.github.com/users/${username}`)
         .then(response => {
