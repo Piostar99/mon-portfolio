@@ -1,5 +1,5 @@
-Pio Francois ACAKPOVI
-Développeur Full Stack | DevSecOps | Architecte SOAR & IA (RAG)
+Pio François ACAKPOVI
+DevSecOps | Full Stack | Infrastructure
 Disponible immédiatement — Ouvert au présentiel, remote 
 
 
@@ -17,7 +17,7 @@ pioacakpovi@gmail.com
 LinkedIn
 https://www.linkedin.com/in/pio-acakpovi/ 
 GitHub
-github.com/username
+https://github.com/Piostar99
 
   LANGUES
 
@@ -65,21 +65,14 @@ Open Source Mentorat tech Veille CVE / CERT
 •	Outils Web & Data : Next.js, Git, PostgreSQL, SQLite, HTML/CSS, JavaScript	OBJECTIF PROFESSIONNEL
 Tech Lead spécialisé en cybersécurité et développement sécurisé. Objectif : piloter des équipes techniques dans la conception d'architectures backend Django résilientes, intégrant SecOps, automatisation SOAR et IA générative (RAG). Promouvoir une approche Security by Design systématique pour réduire les risques dès la phase de conception.
 EXPÉRIENCES PROFESSIONNELLES
-Développeur & Analyste Sécurité Junior
+DevSecOps
 MEWAN LOGIA — Cotonou, Bénin	Avril 2024 – Présent
--	Gestion de projet : Supervision et coordination des développements d'applications web et mobiles, depuis la conception jusqu'au déploiement, en garantissant le respect des délais et des spécifications fonctionnelles
--	 Gestion de projet : Supervision et coordination des développements d'applications web et mobiles, depuis la conception jusqu'au déploiement, en garantissant le respect des délais et des spécifications fonctionnelles.
--	Management d'équipe : Manager une équipe de développeurs, allouer les ressources et définir les priorités pour assurer le succès des projets.
--	Développement Web et Mobile : Compréhension approfondie de la programmation pour participer activement au développement d'applications Web et mobile, en utilisant des langages et des frameworks adaptés aux besoins du projet.
--	 Polyvalence : Capacité à assumer diverses responsabilités liées à l'exploitation informatique, telles que la gestion des sauvegardes, la surveillance des performances système et la mise en place de mesures de sécurité.
--	Administration réseau : Gérer et entretenir les infrastructures de réseau, configurer les équipements et résoudre les problèmes de connectivité pour garantir la disponibilité et la sécurité des systèmes 
--	Utilisation de plateformes collaboratives : Expérience avec des outils tels que Trello et Redmine pour la gestion de projets, ainsi que Nextcloud pour le stockage et le partage sécurisés de fichiers.
--	Développement d'applications web sécurisées (React, Django, PostgreSQL) avec contrôles OWASP intégrés
--	Conduite de tests d'intrusion (black/grey/white box) sur applications web et infrastructure réseau
--	Mise en place du pipeline DevSecOps : analyse SAST (SonarQube), DAST (OWASP ZAP), gestion des secrets
--	Surveillance SOC : analyse d'alertes SIEM, investigation d'incidents, réponse et remédiation (OPENVAS, WAZUH, THEHIVE)
--	Formation des équipes développement aux pratiques de codage sécurisé (OWASP, revues de code)
--	Rédaction de rapports de vulnérabilités avec score CVSS et plan de remédiation
+-	Pipelines CI/CD sécurisés (Shift-Left) : Automatisation des contrôles SAST (SonarQube), DAST (OWASP ZAP), audit des dépendances (SCA) et gestion sécurisée des secrets dans les workflows CI/CD.
+-	Sécurisation Conteneurs & Infrastructure : Conteneurisation Docker sécurisée, durcissement des serveurs Linux, segmentation réseau, chiffrement TLS et gouvernance des accès (moindre privilège).
+-	Security by Design applicatif : Développement, revue d'architecture et durcissement d'applications web & APIs (Django, React, PostgreSQL) face aux risques OWASP Top 10.
+-	Détection continue & Orchestration SOAR : Supervision SIEM (Wazuh), scans de vulnérabilités (OpenVAS) et réponse automatisée aux incidents (TheHive).
+-	Gestion des vulnérabilités & Conformité : Scans continus d'images Docker, dépendances (SBOM/SCA) et environnements, priorisation des CVE et suivi des correctifs en production.
+-	Culture DevSecOps : Mise en place de quality gates, revues de code orientées sécurité et accompagnement des équipes aux pratiques de codage sécurisé.
 
 
 Stagiaire professionnel en sécurité informatique
@@ -114,17 +107,16 @@ Licence en Informatique — Réseaux Informatique et Télecoms
 Université Polytechnique Internationale du Bénin (UPIB)	2017 – 2020
 -	Mention Très bien — Spécialisation Systèmes, Réseaux et Sécurité
 PROJETS NOTABLES
-Solution Globale de Cybersécurité, GRC & ITAM (Projet Sous NDA)
-	2023
--	Rôle Tech Lead & Full-Stack : Cadrage, management technique de 2 développeurs et architecture d'une plateforme intégrée de gestion des incidents et des actifs (CMDB). 
--	Backend & SOAR : Interconnexion et orchestration d'outils cyber clés (Wazuh, TheHive, OpenVAS), implémentation de tâches asynchrones (Celery/Redis) et d'un assistant IA (RAG via un LLM local Ollama). 
--	Frontend : Création de tableaux de bord dynamiques (KPIs, matrice des risques 5×5) connectés aux APIs de la plateforme via AJAX/Fetch. Stack : Python, Django, PostgreSQL, Celery, Redis, Linux (Debian)
-Plateforme de Gestion et Contrôle des Habilitations (Projet Sous NDA)                                                                                                 
-                                                                                                                                  2025
--	Rôle Tech Lead & Full-Stack : Supervision technique et développement d'une solution de gestion centralisée, d'attribution et de révocation des droits d'accès aux applications d'entreprise. 
--	Sécurité & Automatisation : Automatisation des processus d'audit pour détecter les écarts par rapport aux politiques de sécurité et assurer la conformité réglementaire. 
--	Interface Utilisateur : Conception d'une console d'administration centralisée et épurée pour le suivi précis des niveaux de criticité des employés. Stack : Python, Django, Sécurité applicative, Dashboarding.
+Architecture de Cybersécurité, GRC & ITAM (SOAR)
+-	Connecteurs & Gestion des Vulnérabilités : Architecture d'une plateforme de gestion des vulnérabilités, remédiations, incidents et actifs (CMDB) alimentée par des connecteurs dédiés récupérant et normalisant les données depuis Wazuh, TheHive et OpenVAS (Celery/Redis), avec assistant IA souverain (RAG via Ollama).
+-	Frontend : Tableaux de bord dynamiques (KPIs, matrice des risques 5×5) connectés aux APIs REST. Stack : Python, Django, PostgreSQL, Celery, Redis, Linux (Debian).
+Moteur de Contrôle des Habilitations (RBAC)
+-	Sécurité & Automatisation : Conception d'un moteur d'audit automatisé des droits d'accès selon le principe du moindre privilège afin de détecter les dérives de conformité.
+-	Interface Utilisateur : Console d'administration épurée de suivi des niveaux de criticité. Stack : Python, Django, Sécurité applicative, PostgreSQL.
 
+DataSpeak — IA Souveraine & Interrogation Documentaire (Projet Personnel)
+-	IA Locale & Confidentialité : Conception d'une solution permettant aux entreprises d'interroger leurs fichiers internes en langage naturel grâce à des modèles d'IA exécutés localement (Ollama / RAG), garantissant zéro fuite de données vers le cloud.
+-	Traitement Documentaire : Extraction, indexation vectorielle et génération de réponses contextualisées en déploiement on-premise.
 Plateforme SaaS de Simulation d'Entretiens IA                                                                                                 
  Projet Personnel                                                                                       2025
 -	Rôle Tech Lead & Full-Stack : Conception, rédaction du cahier des charges et développement complet d'une application de simulation d'entretiens personnalisés. 

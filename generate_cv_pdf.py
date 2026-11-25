@@ -101,11 +101,11 @@ def generate_pdf():
     # Header block (Name & Contact details using a Table)
     header_data = [
         [
-            Paragraph("<b>PIO FRANCOIS ACAKPOVI</b>", style_name),
+            Paragraph("<b>PIO FRANÇOIS ACAKPOVI</b>", style_name),
             Paragraph("Abomey-Calavi Cotonou, Bénin<br/>pioacakpovi@gmail.com | +229 0197575034<br/>linkedin.com/in/pio-acakpovi", style_contact)
         ],
         [
-            Paragraph("<b>Développeur Full Stack | DevSecOps | Architecte SOAR & IA (RAG)</b>", style_title),
+            Paragraph("<b>DevSecOps | Full Stack | Infrastructure</b>", style_title),
             Paragraph("", style_contact)
         ]
     ]
@@ -135,8 +135,8 @@ def generate_pdf():
     story.append(Paragraph("COMPÉTENCES TECHNIQUES", style_section_h))
     
     comp_left = (
-        "<b>Développement :</b> Python (Django & DRF), JavaScript/TypeScript, React.js, Node.js, Next.js, SQL/PostgreSQL, SQLite, Celery, Redis<br/>"
-        "<b>DevSecOps & Cloud :</b> Docker, Kubernetes, AWS, CI/CD (GitHub Actions), gestion des secrets, SonarQube (SAST), OWASP ZAP (DAST)<br/>"
+        "<b>Développement :</b> Python (Django & DRF), HTML5/CSS3, JavaScript/TypeScript, React.js, Node.js, Next.js, SQL/PostgreSQL, SQLite, Celery, Redis<br/>"
+        "<b>DevSecOps & Cloud :</b> Docker, AWS, CI/CD (GitHub Actions), gestion des secrets, SonarQube (SAST), OWASP ZAP (DAST)<br/>"
         "<b>Méthodologies :</b> TDD (Test-Driven Development), Agile/Scrum, Veille CVE/CERT, Mentorat tech"
     )
     comp_right = (
@@ -164,16 +164,17 @@ def generate_pdf():
     
     # Job 1
     job1_header = [
-        [Paragraph("<b>Développeur & Analyste Sécurité Junior</b> — MEWAN LOGIA", style_body_bold), Paragraph("Cotonou, Bénin | Avril 2024 – Présent", style_contact)]
+        [Paragraph("<b>Ingénieur d'exploitation informatique</b> — MEWAN LOGIA", style_body_bold), Paragraph("Cotonou, Bénin | Avril 2024 – Présent", style_contact)]
     ]
     job1_table = Table(job1_header, colWidths=[360, 170])
     job1_table.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('PADDING', (0,0), (-1,-1), 0)]))
     story.append(job1_table)
     story.append(Spacer(1, 2))
-    story.append(Paragraph("&bull; <b>Supervision & DevSecOps :</b> Management d'équipe, automatisation des tests SAST (SonarQube) et DAST (OWASP ZAP) dans les pipelines CI/CD.", style_bullet))
-    story.append(Paragraph("&bull; <b>Surveillance SOC :</b> Analyse SIEM, investigation d'incidents et remédiation orchestrée via Wazuh, OpenVAS et TheHive.", style_bullet))
-    story.append(Paragraph("&bull; <b>Développement Sécurisé :</b> Conception d'applications React/Django/PostgreSQL robustes avec implémentation des contrôles OWASP.", style_bullet))
-    story.append(Paragraph("&bull; <b>Audits :</b> Tests d'intrusion boîte noire/grise/blanche et rédaction de rapports de vulnérabilités (scores CVSS).", style_bullet))
+    story.append(Paragraph("&bull; <b>Exploitation &amp; Virtualisation :</b> Mise en production, maintenance et support sur environnements virtualisés (VMware, Hyper-V), sauvegardes et supervision des performances.", style_bullet))
+    story.append(Paragraph("&bull; <b>Pipelines CI/CD Sécurisés (Shift-Left) :</b> Automatisation SAST (SonarQube), DAST (OWASP ZAP), audit SCA et gestion sécurisée des secrets.", style_bullet))
+    story.append(Paragraph("&bull; <b>Conteneurs &amp; Infrastructure :</b> Conteneurisation Docker durcie, hardening Linux, segmentation réseau, TLS et contrôle d'accès moindre privilège.", style_bullet))
+    story.append(Paragraph("&bull; <b>Security by Design &amp; SOAR :</b> Durcissement d'APIs Django/React/PostgreSQL (OWASP) et intégration de Wazuh, OpenVAS et TheHive dans une plateforme GRC.", style_bullet))
+    story.append(Paragraph("&bull; <b>Vulnérabilités &amp; Culture DevSecOps :</b> Scans continus (images/SBOM/CVE), quality gates bloquantes et revues de code orientées sécurité.", style_bullet))
     story.append(Spacer(1, 4))
     
     # Job 2
@@ -217,13 +218,15 @@ def generate_pdf():
     # 4. Projets Notables
     story.append(Paragraph("PROJETS CYBER & IA NOTABLES", style_section_h))
     
-    p1 = "<b>GRC, Cybersécurité & ITAM (NDA, 2023) :</b> Tech Lead. Plateforme de gestion des actifs et d'automatisation SOAR reliant Wazuh, TheHive, OpenVAS. Assistant RAG d'aide à la remédiation basé sur un LLM local via Ollama. Stack: Django, Debian, Celery, Redis."
-    p2 = "<b>Moteur RBAC de Contrôle d'Habilitations (NDA, 2025) :</b> Solution d'audit de droits d'accès pour contrer la dérive des privilèges. Modélisation et tableau de bord de criticité. Stack: Python, Django, PostgreSQL."
-    p3 = "<b>SaaS Simulation d'Entretiens IA (Projet Personnel, 2025) :</b> Plateforme de simulation avec matching CV-Offre en temps réel. Extraction de documents par NLP (PyPDF/DOCX2txt) et agent conversationnel sous Groq API/OpenAI. Stack: Next.js, Django, Celery, Redis."
+    p1 = "<b>Architecture SOAR, GRC &amp; ITAM (en cours, confidentielle) :</b> Plateforme de gestion des vulnérabilités, remédiations, incidents et actifs (CMDB) alimentée par des connecteurs dédiés (dont Wazuh, TheHive, OpenVAS) et un assistant RAG local via Ollama. Stack: Django, Debian, Celery, Redis."
+    p2 = "<b>Moteur RBAC de Contrôle d'Habilitations :</b> Moteur d'audit automatisé des droits d'accès (moindre privilège) pour détecter la dérive des privilèges, avec console de criticité. Stack: Python, Django, PostgreSQL."
+    p3 = "<b>DataSpeak (Projet Personnel) :</b> Solution d'IA souveraine permettant aux entreprises d'interroger leurs fichiers en langage naturel via des modèles LLM locaux (Ollama / RAG) avec confidentialité totale des données (on-premise)."
+    p4 = "<b>SaaS Simulation d'Entretiens IA (Projet Personnel, 2025) :</b> Plateforme de simulation avec matching CV-Offre en temps réel. Extraction de documents par NLP (PyPDF/DOCX2txt) et agent conversationnel sous Groq API/OpenAI. Stack: Next.js, Django, Celery, Redis."
     
     story.append(Paragraph("&bull; " + p1, style_bullet))
     story.append(Paragraph("&bull; " + p2, style_bullet))
     story.append(Paragraph("&bull; " + p3, style_bullet))
+    story.append(Paragraph("&bull; " + p4, style_bullet))
     story.append(Spacer(1, 6))
     
     # 5. Formations
